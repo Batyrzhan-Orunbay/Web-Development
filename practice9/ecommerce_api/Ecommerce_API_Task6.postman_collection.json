@@ -1,0 +1,251 @@
+{
+  "info": {
+    "name": "Ecommerce API - Task 6",
+    "_postman_id": "ecommerce-api-task6",
+    "description": "Ecommerce API collection including Tasks 1-6. Task 6 adds Search & Filters support.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "List All Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Smartphone\",\n  \"description\": \"Latest model smartphone with great camera\",\n  \"price\": \"599.99\",\n  \"stock\": 50\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Get Single Product",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/1/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Update Product (PUT)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Smartphone Pro\",\n  \"description\": \"Updated model with better specs\",\n  \"price\": \"699.99\",\n  \"stock\": 40\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/1/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Partial Update Product (PATCH)",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"price\": \"649.99\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/1/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/1/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", "1", ""]
+            }
+          }
+        },
+        {
+          "name": "List Products - Page 1",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/?page=1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""],
+              "query": [{ "key": "page", "value": "1" }]
+            }
+          }
+        },
+        {
+          "name": "List Products - Page 2",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/?page=2",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""],
+              "query": [{ "key": "page", "value": "2" }]
+            }
+          }
+        },
+        {
+          "name": "Create Product - Laptop",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Laptop\",\n  \"description\": \"High performance laptop for professionals\",\n  \"price\": \"1299.99\",\n  \"stock\": 20\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Product - Headphones",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wireless Headphones\",\n  \"description\": \"Noise-cancelling bluetooth headphones\",\n  \"price\": \"199.99\",\n  \"stock\": 100\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        },
+        {
+          "name": "Create Product - Phone",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Phone Case\",\n  \"description\": \"Protective phone case compatible with all models\",\n  \"price\": \"19.99\",\n  \"stock\": 200\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/products/",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Search & Filters",
+      "item": [
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/?search=phone",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "phone",
+                  "description": "Search products by name or description keyword"
+                }
+              ]
+            },
+            "description": "Search products by name or description. Uses ?search= query parameter. Searches across 'name' and 'description' fields."
+          }
+        },
+        {
+          "name": "Sort Products by Price",
+          "request": {
+            "method": "GET",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/products/?ordering=-price",
+              "host": ["{{base_url}}"],
+              "path": ["api", "products", ""],
+              "query": [
+                {
+                  "key": "ordering",
+                  "value": "-price",
+                  "description": "Sort by price descending. Use 'price' for ascending, '-price' for descending."
+                }
+              ]
+            },
+            "description": "Sort products by price in descending order. Use ?ordering=price for ascending, ?ordering=-price for descending. Also supports ?ordering=name."
+          }
+        }
+      ]
+    }
+  ]
+}
